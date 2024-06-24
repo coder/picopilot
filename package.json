@@ -1,0 +1,56 @@
+{
+  "name": "picopilot",
+  "publisher": "coder",
+  "displayName": "Picopilot",
+  "description": "GitHub Copilot in 70 lines of JavaScript.",
+  "repository": {
+    "url": "https://github.com/coder/picopilot"
+  },
+  "version": "1.0.3",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Machine Learning",
+    "AI"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "icon": "./icon.png",
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "picopilot.token",
+        "title": "Picopilot: Set OpenAI API Key"
+      }
+    ],
+    "configuration":[
+      {
+        "title": "Picopilot",
+        "properties": {
+          "picopilot.prompt": {
+            "type": "string",
+            "default": "",
+            "description": "The prompt to use to generate completions. '{language}' is replaced with the active document language."
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "build": "webpack --mode production --devtool hidden-source-map",
+    "watch": "bun run build -- --watch",
+    "package": "vsce package --allow-star-activation"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "openai": "^4.52.0"
+  }
+}

@@ -49,6 +49,8 @@ Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter
 ext install coder.picopilot
 ```
 
+Feel free to configure a custom prompt in your settings.
+
 ## Development
 
 Clone the repository, run `bun install`, `bun watch`, open VS Code, and press F5 to launch the extension in development mode.
